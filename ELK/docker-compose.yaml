@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+# ELK: Logstash - Elasticsearch - Kibana
+
+# Elasticsearch
+  elasticsearch:
+    image: elasticsearch:7.9.2
+    ports:
+      - '9200:9200'
+    environment:
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  # Kibana
+
+  kibana:
+      image: kibana:7.9.2
+      ports:
+        - '5601:5601'
+
+  # Logstash
+
+  logstash: 
+    image: logstash:7.9.2
+    ports:
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    volumes:
+      - type: bind
+        source: ./ports.conf
+        target: /usr/share/logstash/ports.conf
+        read_only: true
+

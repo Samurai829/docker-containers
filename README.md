@@ -4,7 +4,7 @@ Esto es un repositorio basado en Contenedores Docker.
 
 ## Que contiene este Repositorio? 🤨
 
-En este repositorio es en una libreria que contiene y a futuro contendra todos mis Dockerfile & Docker-Compose con el fin de facilitar el uso de ciertas App y servicios el cual se alojan en contenedores Docker.
+Este repositorio es en una libreria que contiene y a futuro contendra todos mis Dockerfile & Docker-Compose con el fin de facilitar el uso de ciertas App y Servicios el cual se alojan en contenedores Docker.
 
 ## Cual es el fin de este Repositorio? 🤔
 

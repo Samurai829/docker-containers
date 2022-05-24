@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+
+  Website:
+    build: .
+    ports:
+      - 80:80
+
+# Agrega mas servicios si deseas que la pagina sea mas completa
+# como la complejidad para almacenar o consultar de datos 

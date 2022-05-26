@@ -4,6 +4,7 @@ services:
 
   Website:
     build: .
+    container_name: Website
     ports:
       - 80:80
 

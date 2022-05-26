@@ -16,6 +16,7 @@ services:
 
   app:
     image: myapp:latest
+    container_name: Application
     ports: 
       - 3000:3000
     environment:
@@ -26,6 +27,7 @@ services:
 
   mysql:
     image: mysql:5.7
+    container_name: Mysql
     volumes:
     - /mysql-data:/var/lib/mysql
     environment:

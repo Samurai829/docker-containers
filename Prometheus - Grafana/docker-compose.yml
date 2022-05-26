@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+
+  prometheus:
+    image: prom/prometheus
+    container_name: Prometheus
+    volumes:
+      - ./prometheus-grafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: Grafana
+    volumes:
+      - ./prometheus-grafana/grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./prometheus-grafana/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    ports:
+      - 3000:3000
+    links: 
+      - prometheus
+    restart: unless-stopped
+  

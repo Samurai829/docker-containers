@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ./datasource/grafana.ini:/etc/grafana/grafana.ini
+      - ./datasource/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    ports:
+      - 3000:3000
+    restart: unless-stopped

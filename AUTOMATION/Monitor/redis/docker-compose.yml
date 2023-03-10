@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:alpine3.16
+    container_name: redis
+    ports:
+      - 6379:6379
+    restart: unless-stopped
+    networks:
+      - redis
+       
+
+networks:
+  redis:
+    driver: bridge
+    name: redis

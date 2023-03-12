@@ -1,5 +1,5 @@
 FROM httpd:alpine
 
 MAINTAINER Samurai829
-COPY ./Website /usr/local/apache2/htdocs/
+COPY ./www /usr/local/apache2/htdocs/
 
